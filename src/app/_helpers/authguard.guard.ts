@@ -20,8 +20,12 @@ export class AuthguardGuard implements CanActivate {
     let isLoggin = !!this.storedSession.getToken();
     let canAccess = false;
     if (isLoggin){
+      let item=this.storedSession.getToken();
+      console.log(item);
       let agora = new Date();
-      let expirein = new Date(this.storedSession.getToken().expires_in);
+      let expirein = new Date(item.expires_in);
+      
+      console.log(agora, expirein, item.expires_in)
       canAccess = expirein > agora;
     }
     if (!canAccess) {

@@ -26,9 +26,9 @@ export class LoginComponent implements OnInit {
       dados.forEach(it=>{
         if (it.username == this.username && 
             bcryptjs.compareSync(this.password,it.password)){
-          this.storedToken.storeToken(it);
-          this.loginService.showMessage("Login efetuado com sucesso!");
-          this.router.navigate([""]);
+            this.storedToken.storeToken(it);
+            this.loginService.showMessage("Login efetuado com sucesso!");
+            setTimeout(() => { this.router.navigate([""]); }, 5000);
           return;
         } else {
           this.loginService.showMessage("Problemas ao efetuar login!", true);
