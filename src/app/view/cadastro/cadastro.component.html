@@ -1,0 +1,45 @@
+<mat-card class="card-cadastro">
+  <mat-card-header>
+    <mat-card-title>Cadastro de Usuários</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Login</mat-label>
+        <input type="text" matInput name="username" [(ngModel)]="cadastro.username" required>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Senha</mat-label>
+        <input type="password" matInput name="password" [(ngModel)]="cadastro.password" required>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Redigite a senha</mat-label>
+        <input type="password" matInput name="confpassword" [(ngModel)]="confpassword" required>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Nome</mat-label>
+        <input type="text" matInput name="nome" [(ngModel)]="cadastro.nome" required>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>E-mail</mat-label>
+        <input type="email" matInput name="email" [(ngModel)]="cadastro.email" required>
+      </mat-form-field>
+    </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <div>
+      <button mat-raised-button (click)="cadastrar()"
+      [disabled]="cadastro.password == '' || cadastro.password != confpassword" 
+      color="primary">Cadastrar</button>
+      <button mat-raised-button (click)="cancelar()" color="warn">Cancelar</button>
+    </div>
+  </mat-card-actions>
+</mat-card>
