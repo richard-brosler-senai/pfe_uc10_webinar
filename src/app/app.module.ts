@@ -10,6 +10,10 @@ import { MatIconModule} from '@angular/material/icon';
 import { MatInputModule} from '@angular/material/input';
 import { MatSnackBarModule} from '@angular/material/snack-bar';
 import { MatTooltipModule} from '@angular/material/tooltip';
+import { MatSidenavModule} from '@angular/material/sidenav';
+import { MatListModule} from '@angular/material/list';
+import { MatExpansionModule} from '@angular/material/expansion';
+import { MatToolbarModule} from '@angular/material/toolbar';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -39,7 +43,11 @@ import { DashboardComponent } from './view/dashboard/dashboard.component';
     MatIconModule,
     MatInputModule,
     MatSnackBarModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatSidenavModule,
+    MatListModule,
+    MatExpansionModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

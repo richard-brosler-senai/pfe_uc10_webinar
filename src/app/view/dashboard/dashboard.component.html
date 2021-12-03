@@ -1,1 +1,34 @@
-<p>dashboard works!</p>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button mat-icon-button (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <h1>Exemplo Webinar</h1>
+    <span class="menu-spacer"></span>
+    <button *ngIf="isLoggedIn" mat-icon-button (click)="logout()" matTooltip="Efetuar Logoff do Sistema">
+      <mat-icon>exit_to_app</mat-icon>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav>
+    <mat-nav-list>
+      <a mat-list-item routerLink="rota1" (click)="sidenav.toggle()">Rota 1</a>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          Sub-menu
+        </mat-expansion-panel-header>
+        <mat-nav-list>
+          <a mat-list-item routerLink="subItem1" (click)="sidenav.toggle()">Subitem1</a>
+          <a mat-list-item routerLink="subItem2" (click)="sidenav.toggle()">Subitem2</a>
+        </mat-nav-list>
+      </mat-expansion-panel>
+      <a *ngIf="isLoggedIn" mat-list-item (click)="logout()"><mat-icon>exit_to_app</mat-icon>Logoff</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div style="height: 88vh;">
+      <div class="img-fundo-senai"></div>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
